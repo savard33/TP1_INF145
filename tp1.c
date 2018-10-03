@@ -27,10 +27,10 @@ int get_int(int MAX, int MIN);
 /*recoit une valeur max et min et retourne un double si la valeur et entre les limites*/
 double get_double(int MAX, int MIN); 
 
-/*mets à 1 les equipements utilisé*/
+/*mets Ã  1 les equipements utilisÃ©*/
 uint configuration_intiale(int nb_total_equipe); 
 
-//retourne 1 si la chaine testé n'a pas d'équipements brisé et sinon 0
+//retourne 1 si la chaine testÃ© n'a pas d'Ã©quipements brisÃ© et sinon 0
 int chaine_est_rentable(uint equips, int num_chaine, int nb_eq_chaine);
 
 #if (SIM)  si vrai on utilise le code normal du main
@@ -76,7 +76,7 @@ int main(void)
 #endif
 
 
-//Cette implémentation est non - fonctionnelle!!!
+//Cette implÃ©mentation est non - fonctionnelle!!!
 
 uint configuration_initiale(int nb_equipements)
 {
@@ -157,40 +157,40 @@ double get_double(int MAX, int MIN)
 
 
 /*
-stratégie:	un itérateur et égale 32 - le nombre total d'equipement. 
-			Ex: 32-8=24 donc l'itérateur vas ce prositoner sur le 24ème bit.
+stratÃ©gie:	un itÃ©rateur et Ã©gale 32 - le nombre total d'equipement. 
+			Ex: 32-8=24 donc l'itÃ©rateur vas ce prositoner sur le 24Ã¨me bit.
 			Ceci nous permet de ce postioner sur le bit significatif voulue.
 
-			Tant que le i<32 on mets le bit désiré à 1 ensuite on incrémente
-			l'itérateur.
+			Tant que le i<32 on mets le bit dÃ©sirÃ© Ã  1 ensuite on incrÃ©mente
+			l'itÃ©rateur.
 
 			Quand le i est = ou plus grand que 32 on retourne la valeur du
 			unsigned integer.
 */
 uint configuration_intiale(int nb_total_equipe)
 {
-	int i;							// itérateur
-	uint equips = 0;					// unsigned integer qui représente l'usine
+	int i;							// itÃ©rateur
+	uint equips = 0;					// unsigned integer qui reprÃ©sente l'usine
 	i = 32 - nb_total_equipe;		// initialise le i avec la position du bit de commencement sur 32 bits
 	while (i<32)
 	{
-		equips = set_bit(equips, i);  // mets les bits à 1
-		i++;						// incrémente l'itérateur 
+		equips = set_bit(equips, i);  // mets les bits Ã  1
+		i++;						// incrÃ©mente l'itÃ©rateur 
 	}
 	return equips;
 
 }
 
 /*
-	stratégie:	on utilise la formule pos_total=32-1-(num_chaine*nb_eq_equip+pos_chaine)
-				on définie un compteur qui est initialement à 0. 
+	stratÃ©gie:	on utilise la formule pos_total=32-1-(num_chaine*nb_eq_equip+pos_chaine)
+				on dÃ©finie un compteur qui est initialement Ã  0. 
 
 				tant que le compteur est plus petit que nb_eq_chaine on rentre dans la boucle.
-				on test si le bit est égale à 0 avec la fonction get_bit.
+				on test si le bit est Ã©gale Ã  0 avec la fonction get_bit.
 				
-				si il est égale à 0 on met un int nommé rentable à 0 et on sort de la boucle while.
+				si il est Ã©gale Ã  0 on met un int nommÃ© rentable Ã  0 et on sort de la boucle while.
 
-				si il n'est pas égale à 0 rentable == 1. une fois que la boucle while est terminé on retourne
+				si il n'est pas Ã©gale Ã  0 rentable == 1. une fois que la boucle while est terminÃ© on retourne
 				rentable.
 
 */	
@@ -224,6 +224,8 @@ int chaine_est_rentable(uint equips, int num_chaine, int nb_eq_chaine)
 	}
 
 	return rentable;
+	
+	a
 
 
 }
