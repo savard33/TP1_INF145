@@ -225,7 +225,7 @@ int chaine_est_rentable(uint equips, int num_chaine, int nb_eq_chaine)
 
 	return rentable;
 	
-	a
+	
 
 
 }
